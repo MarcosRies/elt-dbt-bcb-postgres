@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_serie
+    columns:
+      - name: codigo_serie
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [11]
+
+  - name: fct_serie_valor
+    columns:
+      - name: valor
+        data_tests:
+          - not_null
+      - name: codigo_serie
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_serie')
+                field: codigo_serie

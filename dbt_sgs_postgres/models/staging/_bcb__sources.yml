@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: bcb
+    schema: raw
+    tables:
+      - name: dados_sgs_raw

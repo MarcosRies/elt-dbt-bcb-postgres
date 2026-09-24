@@ -1,0 +1,1 @@
+SELECT codigo_serie, TO_DATE("data", 'DD/MM/YYYY') AS data_referencia, valor::NUMERIC AS valor FROM {{ source('bcb', 'dados_sgs_raw') }}   
